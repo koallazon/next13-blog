@@ -1,17 +1,19 @@
 {
   "name": "next-blog",
   "version": "0.1.0",
+  "homepage": "https://koallazon.github.io/next13-blog",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "deploy": "next build && next export && touch out/.nojekyll && gh-pages --add --dotfiles -d out",
+    "start": "serve out",
     "lint": "next lint"
   },
   "dependencies": {
     "next": "13.0.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "serve": "^14.0.1"
   },
   "devDependencies": {
     "@types/node": "18.11.7",
